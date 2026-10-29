@@ -40,8 +40,15 @@
       <!-- 7. Dress Code & Notes -->
       <DressCodeSection />
 
-      <!-- 8. RSVP Attendance Form -->
-      <RsvpSection />
+      <!-- 8. Closing Footer Signoff -->
+      <footer class="py-16 text-center select-none px-6">
+        <p class="font-ruqaa text-3xl sm:text-4xl text-[#23140D] font-bold">
+          دامت دياركم عامرة بالأفراح والمسرات
+        </p>
+        <p class="font-amiri text-base sm:text-lg text-[#523726] mt-2 font-bold">
+          عصام & نور — ٢٠٢٦
+        </p>
+      </footer>
     </main>
 
     <!-- Floating Audio Player Button & Sound Stream -->
@@ -60,7 +67,6 @@ import GallerySection from './components/GallerySection.vue'
 import LocationSection from './components/LocationSection.vue'
 import ProgramSection from './components/ProgramSection.vue'
 import DressCodeSection from './components/DressCodeSection.vue'
-import RsvpSection from './components/RsvpSection.vue'
 import AudioPlayer from './components/AudioPlayer.vue'
 
 const audioPlayerRef = ref<InstanceType<typeof AudioPlayer> | null>(null)

@@ -6,9 +6,9 @@
         العد التنازلي
       </h2>
 
-      <!-- Countdown Grid (Days, Hours, Minutes, Seconds) -->
-      <div class="grid grid-cols-4 gap-3 sm:gap-6 max-w-xl mx-auto mb-10">
-        <!-- Days -->
+      <!-- Countdown Grid with Days positioned on the left (dir="ltr") -->
+      <div dir="ltr" class="grid grid-cols-4 gap-3 sm:gap-6 max-w-xl mx-auto mb-10">
+        <!-- Days (Far Left) -->
         <div class="flex flex-col items-center">
           <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-white/95 border-2 border-[#C99E32]/50 shadow-md flex items-center justify-center backdrop-blur-xs">
             <span class="text-3xl sm:text-4xl font-tajawal font-bold text-[#A97E20]">
@@ -38,7 +38,7 @@
           <span class="mt-3 text-sm sm:text-base font-amiri font-bold text-[#3E281C]">دقائق</span>
         </div>
 
-        <!-- Seconds -->
+        <!-- Seconds (Far Right) -->
         <div class="flex flex-col items-center">
           <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-white/95 border-2 border-[#C99E32]/50 shadow-md flex items-center justify-center backdrop-blur-xs">
             <span class="text-3xl sm:text-4xl font-tajawal font-bold text-[#A97E20]">
