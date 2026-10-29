@@ -19,7 +19,7 @@
 
     <!-- Main Wedding Invitation Website -->
     <main class="relative z-10 w-full">
-      <!-- 1. Hero Section with Curtains & Royal Names -->
+      <!-- 1. Hero Section with Royal Names & Family Invitation -->
       <HeroSection />
 
       <!-- 2. Countdown Timer to Wedding Date -->
@@ -40,7 +40,10 @@
       <!-- 7. Dress Code & Notes -->
       <DressCodeSection />
 
-      <!-- 8. Closing Footer Signoff -->
+      <!-- 8. WhatsApp Wishes Form -->
+      <WishesSection />
+
+      <!-- 9. Closing Footer Signoff -->
       <footer class="py-16 text-center select-none px-6">
         <p class="font-ruqaa text-3xl sm:text-4xl text-[#23140D] font-bold">
           دامت دياركم عامرة بالأفراح والمسرات
@@ -67,6 +70,7 @@ import GallerySection from './components/GallerySection.vue'
 import LocationSection from './components/LocationSection.vue'
 import ProgramSection from './components/ProgramSection.vue'
 import DressCodeSection from './components/DressCodeSection.vue'
+import WishesSection from './components/WishesSection.vue'
 import AudioPlayer from './components/AudioPlayer.vue'
 
 const audioPlayerRef = ref<InstanceType<typeof AudioPlayer> | null>(null)

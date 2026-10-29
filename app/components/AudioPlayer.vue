@@ -13,7 +13,7 @@
     <button
       type="button"
       @click="togglePlay"
-      class="group relative w-12 h-12 rounded-full bg-black/60 border border-[#D4AF37]/50 shadow-lg backdrop-blur-md flex items-center justify-center text-[#FFF2B2] hover:text-white transition-all active:scale-90"
+      class="group relative w-12 h-12 rounded-full bg-black/60 border border-[#D4AF37]/50 shadow-lg backdrop-blur-md flex items-center justify-center text-[#FFF2B2] hover:text-white transition-all active:scale-90 cursor-pointer"
       :class="{ 'animate-glow': isPlaying }"
       :title="isPlaying ? 'كتم الموسيقى' : 'تشغيل الموسيقى'"
       aria-label="Toggle background music"
@@ -60,8 +60,8 @@ import { ref } from 'vue'
 const audioRef = ref<HTMLAudioElement | null>(null)
 const isPlaying = ref(false)
 
-// Start at minute 1:07 (67 seconds)
-const START_TIME_SECONDS = 67
+// Start at second 61 (1:01)
+const START_TIME_SECONDS = 61
 
 const handleLoadedMetadata = () => {
   if (audioRef.value && audioRef.value.currentTime < START_TIME_SECONDS) {
@@ -71,7 +71,7 @@ const handleLoadedMetadata = () => {
 
 const handleEnded = () => {
   if (!audioRef.value) return
-  // Loop back to 1:07
+  // Loop back to second 61
   audioRef.value.currentTime = START_TIME_SECONDS
   audioRef.value.play()
 }
@@ -79,7 +79,7 @@ const handleEnded = () => {
 const play = async () => {
   if (!audioRef.value) return
   try {
-    // Jump directly to 1:07 on start
+    // Jump directly to second 61 on start
     if (audioRef.value.currentTime < START_TIME_SECONDS) {
       audioRef.value.currentTime = START_TIME_SECONDS
     }

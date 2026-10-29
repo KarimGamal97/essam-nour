@@ -1,7 +1,7 @@
 <template>
   <section class="py-16 bg-transparent text-[#2E1A11] px-4 sm:px-6">
     <div class="max-w-2xl mx-auto text-center">
-      <!-- Section Title -->
+      <!-- Section Title (Matching the reference design) -->
       <h2 class="text-4xl sm:text-5xl font-ruqaa text-[#23140D] mb-1">
         التفاصيل
       </h2>
@@ -30,9 +30,9 @@
             El Masa Wedding Hall
           </p>
 
-          <!-- Time & Date -->
+          <!-- Time & Date (7:00 PM to 11:00 PM) -->
           <div class="inline-flex items-center gap-1.5 text-xs sm:text-sm font-amiri text-[#3E281C] font-bold">
-            <span>من ٨:٠٠ م حتى ١٢:٠٠ ص</span>
+            <span>من ٧:٠٠ م حتى ١١:٠٠ م</span>
           </div>
           <p class="text-xs font-amiri text-[#6E4F3D] mt-0.5 font-bold">
             السبت، ٧ نوفمبر ٢٠٢٦

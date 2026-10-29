@@ -64,8 +64,8 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from 'vue'
 
-// Target date: November 7, 2026, 20:00:00 (7/11)
-const targetDate = new Date('2026-11-07T20:00:00').getTime()
+// Target date: November 7, 2026, 19:00:00 (7:00 PM)
+const targetDate = new Date('2026-11-07T19:00:00').getTime()
 
 const days = ref('00')
 const hours = ref('00')

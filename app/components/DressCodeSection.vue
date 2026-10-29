@@ -1,29 +1,36 @@
 <template>
-  <section class="py-16 bg-transparent text-[#2E1A11] px-4 sm:px-6">
+  <section class="py-16 bg-transparent text-[#1A0F09] px-4 sm:px-6">
     <div class="max-w-xl mx-auto space-y-6">
-      <!-- Dress Code Card -->
-      <div class="bg-white/95 border-2 border-[#C99E32]/40 rounded-3xl p-8 text-center shadow-md backdrop-blur-xs">
-        <h3 class="text-3xl font-ruqaa text-[#23140D] mb-3">
+      <!-- Dress Code Card (Darker, Bolder, High Contrast) -->
+      <div class="bg-white/95 border-2 border-[#8C6010] rounded-3xl p-8 text-center shadow-lg backdrop-blur-xs">
+        <h3 class="text-3xl sm:text-4xl font-ruqaa text-[#1A0F09] font-bold mb-3">
           قواعد اللباس
         </h3>
-        <p class="font-amiri text-lg text-[#23140D] font-bold mb-1">
-          الزي الرسمي الأنيق (Formal Attire)
-        </p>
-        <p class="font-amiri text-sm sm:text-base text-[#4E3527] font-medium">
-          بدلة رسمية للسادة، وفساتين سهرة راقية للسيدات
+        <div class="inline-block px-5 py-2 rounded-full bg-[#F3EAD7] border border-[#8C6010]/50 mb-3">
+          <p class="font-amiri text-lg sm:text-xl text-[#1A0F09] font-bold">
+            الزي الرسمي الأنيق (Formal Attire)
+          </p>
+        </div>
+        <p class="font-amiri text-base sm:text-lg text-[#2A170E] font-bold leading-relaxed">
+          بدلة رسمية للسادة، وفساتين سهرة راقية ومميزة للسيدات
         </p>
       </div>
 
-      <!-- Notes / Children Card -->
-      <div class="bg-white/95 border-2 border-[#C99E32]/40 rounded-3xl p-8 text-center shadow-md backdrop-blur-xs">
-        <h3 class="text-3xl font-ruqaa text-[#23140D] mb-3">
+      <!-- Notes / Children Card (Darker, Bolder) -->
+      <div class="bg-white/95 border-2 border-[#8C6010] rounded-3xl p-8 text-center shadow-lg backdrop-blur-xs">
+        <h3 class="text-3xl sm:text-4xl font-ruqaa text-[#1A0F09] font-bold mb-3">
           ملاحظة محبة
         </h3>
-        <p class="font-amiri text-base sm:text-lg text-[#3E281C] font-medium leading-relaxed">
-          نحب أطفالكم كأبنائنا، ولكن حرصاً على راحتكم وهدوء أجواء الحفل؛ "جنة الأطفال منازلهم".
+        <div class="inline-block px-5 py-2 rounded-full bg-[#F3EAD7] border border-[#8C6010]/50 mb-3">
+          <p class="font-amiri text-lg sm:text-xl text-[#8C6010] font-bold">
+            " جَنَّةُ الأَطْفَالِ مَنَازِلُهُمْ "
+          </p>
+        </div>
+        <p class="font-amiri text-base sm:text-lg text-[#2A170E] font-bold leading-relaxed">
+          نحب أطفالكم كأبنائنا، ولكن حرصاً على راحتكم وهدوء أجواء ليلتنا المميزة نعتذر عن استقبال الأطفال.
         </p>
-        <p class="font-amiri text-sm text-[#8C6010] mt-3 font-bold">
-          حضوركم ومشاركتنا هو أغلى وأبهى هدية لنا
+        <p class="font-amiri text-base text-[#8C6010] mt-3 font-bold">
+          حضوركم ومشاركتنا هو أغلى وأبهى هدية لنا ✨
         </p>
       </div>
     </div>
@@ -31,5 +38,5 @@
 </template>
 
 <script setup lang="ts">
-// DressCodeSection component
+// DressCodeSection component with bold, darker styling
 </script>

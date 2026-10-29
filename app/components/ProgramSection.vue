@@ -20,7 +20,7 @@
         برنامج الحفل
       </h2>
 
-      <!-- Timeline Items -->
+      <!-- Timeline Items (7:00 PM to 11:00 PM) -->
       <div class="relative space-y-8 before:absolute before:inset-y-2 before:right-1/2 before:w-[2px] before:bg-[#C99E32]/50">
         <div
           v-for="(item, index) in timeline"
@@ -57,24 +57,24 @@ interface TimelineItem {
 
 const timeline: TimelineItem[] = [
   {
-    time: '٠٨:٠٠ م',
+    time: '٠٧:٠٠ م',
     title: 'استقبال الضيوف',
     desc: 'نرحب بكم بمشروبات الاستقبال والضيافة الكريمة'
   },
   {
-    time: '٠٩:٠٠ م',
+    time: '٠٨:٠٠ م',
     title: 'دخول العروسين',
-    desc: 'الزفة وبداية اللحظات السعيدة بحضوركم'
+    desc: 'الزفة وبداية اللحظات السعيدة بحضوركم الغالي'
   },
   {
-    time: '١٠:٣٠ م',
+    time: '٠٩:٣٠ م',
     title: 'كعكة الزفاف والتهاني',
     desc: 'تقطيع التورتة والتقاط الصور التذكارية'
   },
   {
-    time: '١١:٣٠ م',
+    time: '١٠:٣٠ م',
     title: 'بوفيه العشاء',
-    desc: 'عشاء فاخر على شرف حضوركم الغالي'
+    desc: 'عشاء فاخر على شرف حضوركم الكريم حتى الختام'
   }
 ]
 </script>
