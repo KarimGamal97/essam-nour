@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Tajawal', sans-serif;
+  }
+  body {
+    background-color: #F8F4EC;
+    color: #2F2119;
+    overflow-x: hidden;
+  }
+}
+
+/* Animations */
+@keyframes kenBurnsSlow {
+  0%, 100% {
+    transform: scale(1.0);
+  }
+  50% {
+    transform: scale(1.045);
+  }
+}
+
+@keyframes buttonShimmer {
+  0% {
+    transform: translateX(-150%) skewX(-20deg);
+  }
+  25%, 100% {
+    transform: translateX(250%) skewX(-20deg);
+  }
+}
+
+@keyframes floatGentle {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes marqueeRTL {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(50%);
+  }
+}
+
+.animate-ken-burns {
+  animation: kenBurnsSlow 14s ease-in-out infinite;
+}
+
+.animate-shimmer-sweep {
+  animation: buttonShimmer 3.5s ease-in-out infinite;
+}
+
+.animate-button-float {
+  animation: floatGentle 3s ease-in-out infinite;
+}
+
+.animate-album-scroll {
+  display: flex;
+  width: max-content;
+  animation: marqueeRTL 28s linear infinite;
+}
+
+.animate-album-scroll:hover {
+  animation-play-state: paused;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F1E9DB;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #C99E32;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #A97E20;
+}
