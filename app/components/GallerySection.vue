@@ -24,7 +24,7 @@
     </div>
 
     <!-- Infinite Auto-Scrolling Album Strip -->
-    <div class="relative w-full overflow-hidden py-4">
+    <div class="relative w-full overflow-hidden py-4" style="-webkit-transform: translateZ(0); transform: translateZ(0);">
       <!-- Gradient Fades on edges for seamless book/tape illusion -->
       <div class="absolute left-0 inset-y-0 w-12 sm:w-24 bg-gradient-to-r from-[#FAF6EE]/80 to-transparent z-10 pointer-events-none" />
       <div class="absolute right-0 inset-y-0 w-12 sm:w-24 bg-gradient-to-l from-[#FAF6EE]/80 to-transparent z-10 pointer-events-none" />
@@ -37,14 +37,16 @@
           :key="index"
           @click="selectedPhoto = photo"
           class="group relative w-44 sm:w-56 md:w-64 aspect-[3/4] flex-shrink-0 rounded-2xl sm:rounded-3xl p-2 sm:p-2.5 bg-white shadow-[0_10px_25px_rgba(74,52,38,0.12)] hover:shadow-[0_15px_35px_rgba(201,158,50,0.3)] border border-[#C99E32]/35 cursor-pointer transition-all duration-300 transform hover:-translate-y-2 hover:scale-[1.02]"
+          style="-webkit-backface-visibility: hidden; backface-visibility: hidden; -webkit-transform: translate3d(0,0,0); transform: translate3d(0,0,0);"
         >
           <!-- Photo Inside Card -->
-          <div class="w-full h-full rounded-xl sm:rounded-2xl overflow-hidden relative">
+          <div class="w-full h-full rounded-xl sm:rounded-2xl overflow-hidden relative bg-[#F3EAD7]">
             <img
               :src="photo.src"
               :alt="photo.caption"
-              class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700"
-              loading="lazy"
+              class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700 block"
+              loading="eager"
+              decoding="async"
             />
             
             <!-- Hover Overlay -->
@@ -60,6 +62,7 @@
         </div>
       </div>
     </div>
+
 
     <!-- Lightbox Modal for enlarged view -->
     <Teleport to="body">
