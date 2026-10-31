@@ -1,11 +1,16 @@
 <template>
   <div class="fixed bottom-5 left-5 z-40 select-none">
-    <!-- Hidden HTML5 Audio Element -->
+    <!-- Hidden HTML5 Audio Element with media fragment start time -->
     <audio
       ref="audioRef"
-      src="/audio/song.mp3"
+      src="/audio/song.mp3#t=61"
       preload="auto"
-      @loadedmetadata="handleLoadedMetadata"
+      playsinline
+      webkit-playsinline
+      @loadedmetadata="handleMediaReady"
+      @canplay="handleMediaReady"
+      @playing="handlePlaying"
+      @timeupdate="handleTimeUpdate"
       @ended="handleEnded"
     />
 
@@ -59,13 +64,48 @@ import { ref } from 'vue'
 
 const audioRef = ref<HTMLAudioElement | null>(null)
 const isPlaying = ref(false)
+const hasInitialSeeked = ref(false)
 
 // Start at second 61 (1:01)
 const START_TIME_SECONDS = 61
 
-const handleLoadedMetadata = () => {
-  if (audioRef.value && audioRef.value.currentTime < START_TIME_SECONDS) {
-    audioRef.value.currentTime = START_TIME_SECONDS
+const seekToStartTime = () => {
+  const audio = audioRef.value
+  if (!audio) return
+  try {
+    if (audio.currentTime < START_TIME_SECONDS) {
+      audio.currentTime = START_TIME_SECONDS
+    }
+  } catch (e) {
+    // Media not buffered yet on mobile
+  }
+}
+
+const handleMediaReady = () => {
+  if (!hasInitialSeeked.value) {
+    seekToStartTime()
+  }
+}
+
+const handlePlaying = () => {
+  isPlaying.value = true
+  if (!hasInitialSeeked.value) {
+    seekToStartTime()
+  }
+}
+
+// Mobile Safari / Chrome safeguard: enforce 61s on first timeupdate
+const handleTimeUpdate = () => {
+  const audio = audioRef.value
+  if (!audio) return
+  if (!hasInitialSeeked.value) {
+    if (audio.currentTime < START_TIME_SECONDS - 0.5) {
+      try {
+        audio.currentTime = START_TIME_SECONDS
+      } catch (e) {}
+    } else {
+      hasInitialSeeked.value = true
+    }
   }
 }
 
@@ -78,13 +118,25 @@ const handleEnded = () => {
 
 const play = async () => {
   if (!audioRef.value) return
+  const audio = audioRef.value
   try {
-    // Jump directly to second 61 on start
-    if (audioRef.value.currentTime < START_TIME_SECONDS) {
-      audioRef.value.currentTime = START_TIME_SECONDS
+    // Attempt seek before play
+    if (!hasInitialSeeked.value && audio.currentTime < START_TIME_SECONDS) {
+      try {
+        audio.currentTime = START_TIME_SECONDS
+      } catch (e) {}
     }
-    await audioRef.value.play()
+
+    await audio.play()
     isPlaying.value = true
+
+    // Re-check right after play resolves (essential for mobile devices)
+    if (!hasInitialSeeked.value && audio.currentTime < START_TIME_SECONDS) {
+      try {
+        audio.currentTime = START_TIME_SECONDS
+        hasInitialSeeked.value = true
+      } catch (e) {}
+    }
   } catch (error) {
     console.warn('Audio play request was blocked:', error)
   }

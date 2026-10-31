@@ -43,7 +43,7 @@
       <!-- 8. WhatsApp Wishes Form -->
       <WishesSection />
 
-      <!-- 9. Closing Footer Signoff -->
+      <!-- 9. Closing Footer Signoff & Developer Credit -->
       <footer class="py-16 text-center select-none px-6">
         <p class="font-ruqaa text-3xl sm:text-4xl text-[#23140D] font-bold">
           دامت دياركم عامرة بالأفراح والمسرات
@@ -51,6 +51,21 @@
         <p class="font-amiri text-base sm:text-lg text-[#523726] mt-2 font-bold">
           عصام & نور — ٢٠٢٦
         </p>
+
+        <!-- Developer Credit by Kariim -->
+        <div class="mt-8 pt-6 border-t border-[#C99E32]/30 max-w-xs mx-auto">
+          <p class="text-xs font-tajawal text-[#523726]">
+            تمت البرمجة والتصميم بواسطة
+            <a
+              href="https://kariim-portfolio.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="font-bold text-[#8C6010] hover:text-[#23140D] underline decoration-[#C99E32] transition-colors inline-flex items-center gap-1 mx-1"
+            >
+              kariim ✦
+            </a>
+          </p>
+        </div>
       </footer>
     </main>
 
